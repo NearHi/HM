@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="all" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta http-equiv="pragma" Content="no-cach" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="copyright" content="" />
+    <meta name="description" content="" />
+    <meta name="HandheldFriendly" content="true" />
+    <title>重庆华美指标</title>
+    <link type="text/css" media="all" rel="stylesheet" href="css/style.css" />
+</head>
+
+<body ontouchstart="" id="container">
+    <article class="khfxWarp">
+        <section class="khfxPane" style="display:block" id="quotaBody">
+            
+        </section>
+      
+      </article>
+    
+    <script src="lib/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript">
+
+        function GetUrlParms() {
+
+            var args = new Object();
+
+            var query = location.search.substring(1);//获取查询串   
+
+            var pairs = query.split("&");//在逗号处断开   
+
+            for (var i = 0; i < pairs.length; i++) {
+
+                var pos = pairs[i].indexOf('=');//查找name=value   
+
+                if (pos == -1) continue;//如果没有找到就跳过   
+
+                var argname = pairs[i].substring(0, pos);//提取name   
+
+                var value = pairs[i].substring(pos + 1);//提取value   
+
+                args[argname] = decodeURI(value);//存为属性   
+
+            }
+
+            return args;
+
+        }
+        $(function () {
+            var args = new Object();
+            args = GetUrlParms();
+
+            var headerId = args['headerId'];
+
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost:5000/api/HMQuota/',
+                data: { "id": headerId },
+                dataType: 'json',
+                success: function (data) {
+                    var categoryName = data.category == 1 && "员工指标" || data.category == 2 && "客户指标" || data.category == 3 && "业绩指标";
+                    var result = '';
+        
+
+                    result +=
+                        
+
+                        '    <hgroup class="khfxRow">'
+                                    + '      <header>'+categoryName+'</header>'
+                                    + '      <div class="mid">'
+                                    + '        <span><label>名称：</label>' + data.quotaName + '</span> '
+                                    + '        <span><label>日期：</label>' + data.createDate + '</span> '
+                                    + '      </div>'
+                                    + '      <div class="mid">'
+                                    + '        <span><label>指标定义：</label>' +data.quotaBody.quotaString + '</span> '
+                                    + '        <span><label>计算公式：</label>' + data.quotaBody.quotaString1 + '</span> '
+                                    + '        <span><label>详细说明：</label>' + data.quotaBody.quotaString2 + '</span> '
+                                    + '        <span><label>其他：</label>' + data.quotaBody.quotaString3 + '</span> '                
+                                    + '      </div>'
+                                    + '      <footer><a href="http://localhost:5000/HMQuota/index.html">关闭</a></footer>'
+                                    + '    </hgroup>';
+
+
+                    $('#quotaBody').append(result);
+                },
+                error: function (xhr, type) {
+
+                }
+            });
+        });
+    </script>
+    </div>
+</body>
+
+</html>

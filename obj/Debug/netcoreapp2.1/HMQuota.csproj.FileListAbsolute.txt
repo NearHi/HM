@@ -1,0 +1,14 @@
+F:\dotnet\HMQuota\bin\Debug\netcoreapp2.1\HMQuota.deps.json
+F:\dotnet\HMQuota\bin\Debug\netcoreapp2.1\HMQuota.runtimeconfig.json
+F:\dotnet\HMQuota\bin\Debug\netcoreapp2.1\HMQuota.runtimeconfig.dev.json
+F:\dotnet\HMQuota\bin\Debug\netcoreapp2.1\HMQuota.dll
+F:\dotnet\HMQuota\bin\Debug\netcoreapp2.1\HMQuota.pdb
+F:\dotnet\HMQuota\obj\Debug\netcoreapp2.1\HMQuota.csprojAssemblyReference.cache
+F:\dotnet\HMQuota\obj\Debug\netcoreapp2.1\HMQuota.csproj.CoreCompileInputs.cache
+F:\dotnet\HMQuota\obj\Debug\netcoreapp2.1\HMQuota.RazorAssemblyInfo.cache
+F:\dotnet\HMQuota\obj\Debug\netcoreapp2.1\HMQuota.RazorAssemblyInfo.cs
+F:\dotnet\HMQuota\obj\Debug\netcoreapp2.1\HMQuota.AssemblyInfoInputs.cache
+F:\dotnet\HMQuota\obj\Debug\netcoreapp2.1\HMQuota.AssemblyInfo.cs
+F:\dotnet\HMQuota\obj\Debug\netcoreapp2.1\HMQuota.RazorTargetAssemblyInfo.cache
+F:\dotnet\HMQuota\obj\Debug\netcoreapp2.1\HMQuota.dll
+F:\dotnet\HMQuota\obj\Debug\netcoreapp2.1\HMQuota.pdb
